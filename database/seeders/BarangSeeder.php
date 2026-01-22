@@ -9,7 +9,7 @@ class BarangSeeder extends Seeder
 {
     public function run(): void
     {
-        DB::table('barang')->insert([
+        DB::table('barangs')->insert([
             [
                 'kategori_id' => 1,
                 'supplier_id' => 1,
