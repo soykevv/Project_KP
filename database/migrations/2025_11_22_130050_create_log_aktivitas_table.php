@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('log_aktivitas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('user')->onDelete('cascade');
-            $table->foreignId('barang_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('barang_id')->nullable()->constrained('barangs')->onDelete('cascade');
             $table->enum('tipe_aktivitas', ['barang_masuk', 'barang_keluar', 'penyesuaian']);
             $table->integer('jumlah');
             $table->text('keterangan')->nullable();
